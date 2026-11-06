@@ -1,0 +1,8 @@
+GROQ_API_KEY = "Paste your own key"
+
+AVIATIONSTACK_API_KEY = "Paste your own key"
+
+TAVILY_API_KEY = "Paste your own key"
+
+DATABASE_URL = "Paste your own database url"
+
