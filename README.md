@@ -100,33 +100,45 @@ git clone https://github.com/your-username/AI-Travel-Planner.git
 cd AI-Travel-Planner
 ```
 
-### 3. Create a Virtual Environment
+### 3. Install uv
+
+If uv is not already installed:
 
 ```bash
-python -m venv venv
+pip install uv
 ```
 
-Activate the environment:
+Alternatively, follow the official [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/).
+
+### 4. Create a Virtual Environment
+
+```bash
+uv venv
+```
+
+### 5. Activate the Virtual Environment
 
 **Windows:**
 
 ```bash
-venv\Scripts\activate
+.venv\Scripts\Activate
 ```
 
-**Linux / macOS:**
+### 6. Install Dependencies
+
+If your project contains a `requirements.txt` file:
 
 ```bash
-source venv/bin/activate
+uv add -r requirements.txt
 ```
 
-### 4. Install Dependencies
+Alternatively, if you're managing dependencies through `pyproject.toml`:
 
 ```bash
-pip install -r requirements.txt
+uv sync
 ```
 
-### 5. Configure Environment Variables
+### 7. Configure Environment Variables
 
 Create a `.env` file in the root directory.
 
@@ -138,16 +150,16 @@ TAVILY_API_KEY=your_tavily_api_key
 
 Add any additional API credentials required by your flight search tool.
 
-### 6. Set Up PostgreSQL
+### 8. Set Up PostgreSQL
 
 Create a PostgreSQL database and configure the connection string in your `.env` file.
 
 The application uses `PostgresSaver` to create and manage checkpoint tables.
 
-### 7. Run the Application
+### 9. Run the Application
 
 ```bash
-python app.py
+uv run app.py
 ```
 
 Enter your travel request when prompted.
